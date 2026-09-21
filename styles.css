@@ -195,3 +195,44 @@ select {
   text-align: center;
   margin-top: 20px;
 }
+/* ---------- Añadido en el Paso 19 (liquidación) ---------- */
+
+/* Casillas de verificación (checkbox) */
+.casilla {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 400;
+}
+
+.casilla input {
+  width: auto;
+}
+
+/* Tabla con el desglose de la liquidación */
+.resultado p {
+  margin: 0 0 8px;
+}
+
+.desglose {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.desglose td {
+  padding: 8px 0;
+  border-bottom: 1px solid #cfe3d2;
+  font-weight: 400;
+}
+
+.desglose td:last-child {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.desglose .total td {
+  font-weight: 700;
+  font-size: 1.05rem;
+  border-bottom: none;
+}

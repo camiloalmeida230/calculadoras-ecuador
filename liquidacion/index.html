@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Liquidación Laboral Ecuador 2026 | Renuncia y Despido</title>
+  <meta name="description" content="Calcula gratis tu liquidación laboral en Ecuador 2026 por renuncia o despido intempestivo: indemnización, desahucio, décimos y vacaciones, con el detalle de cada valor.">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="encabezado">
+    <a class="volver" href="../">← Todas las calculadoras</a>
+    <h1>Calculadora de liquidación laboral</h1>
+    <p>Ecuador 2026 · Renuncia, despido y período de prueba</p>
+  </header>
+
+  <main class="contenedor">
+    <section class="tarjeta">
+      <h2>Calcula tu liquidación</h2>
+
+      <div class="campo">
+        <label for="motivo">Motivo de salida</label>
+        <select id="motivo">
+          <option value="renuncia">Renuncia (desahucio)</option>
+          <option value="despido">Despido intempestivo</option>
+          <option value="prueba">Fin del período de prueba</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label for="ingreso">Fecha de ingreso</label>
+        <input type="date" id="ingreso">
+      </div>
+
+      <div class="campo">
+        <label for="salida">Fecha de salida</label>
+        <input type="date" id="salida">
+      </div>
+
+      <div class="campo">
+        <label for="sueldo">Último sueldo mensual (USD)</label>
+        <input type="number" id="sueldo" placeholder="Ej: 800" min="0" step="0.01">
+      </div>
+
+      <div class="campo">
+        <label for="mejorSueldo">Mejor sueldo de los últimos 12 meses (opcional)</label>
+        <input type="number" id="mejorSueldo" placeholder="Solo si fue mayor al último" min="0" step="0.01">
+      </div>
+
+      <div class="campo">
+        <label for="region">Región donde trabajas</label>
+        <select id="region">
+          <option value="sierra">Sierra y Amazonía</option>
+          <option value="costa">Costa y Galápagos</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label class="casilla"><input type="checkbox" id="mensual13"> Recibo el décimo tercero cada mes</label>
+        <label class="casilla"><input type="checkbox" id="mensual14"> Recibo el décimo cuarto cada mes</label>
+      </div>
+
+      <button id="calcular">Calcular liquidación</button>
+
+      <div id="resultado" class="resultado"></div>
+    </section>
+
+    <p class="aviso">Cálculo referencial. No incluye fondos de reserva pendientes, sueldos adeudados, horas extra ni vacaciones de años anteriores. No reemplaza la asesoría de un abogado o del Ministerio del Trabajo.</p>
+
+    <article class="contenido">
+      <h2>¿Qué incluye la liquidación?</h2>
+      <p>Al terminar una relación laboral, el empleador debe pagar los valores proporcionales que el trabajador ganó y aún no recibió: décimo tercero, décimo cuarto y vacaciones. Según el motivo de salida, se suman la indemnización por despido y la bonificación por desahucio.</p>
+
+      <h2>Despido intempestivo (Art. 188)</h2>
+      <p>Si el empleador te despide sin causa legal, te corresponde una indemnización: 3 sueldos si trabajaste hasta 3 años, o un sueldo por cada año de servicio si trabajaste más, con un máximo de 25. Para este cálculo, una fracción de año cuenta como año completo. Se puede usar como base el mejor sueldo de los últimos 12 meses.</p>
+
+      <h2>Bonificación por desahucio (Art. 185)</h2>
+      <p>Equivale al 25% de tu último sueldo por cada año completo de servicio. Se paga cuando renuncias mediante desahucio y, según la interpretación más aceptada, también se suma a la indemnización en caso de despido intempestivo.</p>
+
+      <h2>Período de prueba</h2>
+      <p>Si la relación termina dentro del período de prueba (hasta 90 días), no hay indemnización ni desahucio, pero sí deben pagarse los décimos y las vacaciones proporcionales.</p>
+
+      <h2>¿Cómo se calculan los proporcionales?</h2>
+      <p>El décimo tercero se calcula desde el 1 de diciembre; el décimo cuarto, desde el inicio del período de tu región (1 de agosto en Sierra y Amazonía, 1 de marzo en Costa y Galápagos); y las vacaciones, desde tu último aniversario laboral. Si recibes un décimo cada mes, no se incluye en la liquidación porque ya lo cobraste.</p>
+    </article>
+  </main>
+
+  <script src="calculo.js"></script>
+</body>
+</html>
