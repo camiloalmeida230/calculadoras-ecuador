@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora Décimo Cuarto Sueldo Ecuador 2026 (Sierra y Costa)</title>
+  <meta name="description" content="Calcula gratis tu décimo cuarto sueldo en Ecuador 2026 con el salario básico de $482. Fechas de pago para Sierra, Amazonía, Costa y Galápagos.">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="encabezado">
+    <a class="volver" href="../">← Todas las calculadoras</a>
+    <h1>Calculadora de décimo cuarto sueldo</h1>
+    <p>Ecuador 2026 · Salario básico: $482</p>
+  </header>
+
+  <main class="contenedor">
+    <section class="tarjeta">
+      <h2>Calcula tu décimo cuarto</h2>
+
+      <div class="campo">
+        <label for="region">Región donde trabajas</label>
+        <select id="region">
+          <option value="sierra">Sierra y Amazonía</option>
+          <option value="costa">Costa y Galápagos</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label for="meses">Meses trabajados en el período</label>
+        <input type="number" id="meses" value="12" min="1" max="12">
+      </div>
+
+      <button id="calcular">Calcular</button>
+
+      <p id="resultado" class="resultado"></p>
+    </section>
+
+    <p class="aviso">Cálculo referencial para jornada completa con el salario básico de 2026. Para casos específicos, consulta al Ministerio del Trabajo o a un contador.</p>
+
+    <article class="contenido">
+      <h2>¿Qué es el décimo cuarto sueldo?</h2>
+      <p>Es un bono anual equivalente a un salario básico unificado. Lo reciben todos los trabajadores en relación de dependencia, sin importar cuánto ganen: una persona con sueldo de $2.000 recibe el mismo décimo cuarto que una que gana el básico.</p>
+
+      <h2>¿Cómo se calcula?</h2>
+      <p><strong>Décimo cuarto = salario básico × meses trabajados ÷ 12</strong></p>
+      <p>Ejemplo: si trabajaste 6 meses en el período, el cálculo es 482 × 6 ÷ 12 = <strong>$241</strong>. Si trabajas a tiempo parcial, el valor es proporcional a tu jornada.</p>
+
+      <h2>¿Cuándo se paga según la región?</h2>
+      <ul>
+        <li><strong>Sierra y Amazonía:</strong> período del 1 de agosto al 31 de julio; se paga hasta el 15 de agosto.</li>
+        <li><strong>Costa y Galápagos:</strong> período del 1 de marzo al último día de febrero; se paga hasta el 15 de marzo.</li>
+      </ul>
+      <p>También puede recibirse mensualizado, si el trabajador lo solicita.</p>
+
+      <h2>¿Qué salario básico se usa?</h2>
+      <p>Esta calculadora usa el salario básico de 2026, que es de $482. El valor se actualiza cada año cuando el Gobierno fija el nuevo salario básico.</p>
+    </article>
+  </main>
+
+  <script>
+    const SBU = 482;
+    const boton = document.getElementById("calcular");
+
+    boton.addEventListener("click", function () {
+      const region = document.getElementById("region").value;
+      const meses = Number(document.getElementById("meses").value);
+      const resultado = document.getElementById("resultado");
+
+      if (meses < 1 || meses > 12) {
+        resultado.className = "resultado error";
+        resultado.textContent = "Ingresa entre 1 y 12 meses.";
+        return;
+      }
+
+      const decimoCuarto = (SBU * meses) / 12;
+
+      let fechaPago;
+      if (region === "sierra") {
+        fechaPago = "hasta el 15 de agosto";
+      } else {
+        fechaPago = "hasta el 15 de marzo";
+      }
+
+      resultado.className = "resultado";
+      resultado.textContent = "Tu décimo cuarto sueldo es: $" + decimoCuarto.toFixed(2) + " (se paga " + fechaPago + ").";
+    });
+  </script>
+</body>
+</html>

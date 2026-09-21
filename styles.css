@@ -118,3 +118,80 @@ button:hover {
   text-align: center;
   margin-top: 24px;
 }
+/* ---------- Añadido en el Paso 11 ---------- */
+
+/* Enlace "volver" en la franja azul */
+.volver {
+  display: inline-block;
+  color: white;
+  opacity: 0.85;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.volver:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Menú desplegable (mismo estilo que las cajas) */
+select {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: white;
+}
+
+/* Texto explicativo debajo de la calculadora */
+.contenido {
+  margin-top: 32px;
+}
+
+.contenido h2 {
+  font-size: 1.2rem;
+  margin-top: 28px;
+}
+
+/* Menú de calculadoras en la portada */
+.lista-calculadoras {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.lista-calculadoras a {
+  display: block;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 4px solid #0f4c81;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  text-decoration: none;
+  color: inherit;
+}
+
+.lista-calculadoras a:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
+}
+
+.lista-calculadoras strong {
+  display: block;
+  color: #0f4c81;
+  font-size: 1.1rem;
+}
+
+.lista-calculadoras span {
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.proximamente {
+  color: #6b7280;
+  text-align: center;
+  margin-top: 20px;
+}

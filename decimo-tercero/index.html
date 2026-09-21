@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora Décimo Tercer Sueldo Ecuador 2026</title>
+  <meta name="description" content="Calcula gratis tu décimo tercer sueldo en Ecuador. Ingresa tu sueldo y los meses trabajados y conoce el valor al instante, con la explicación del cálculo.">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="encabezado">
+    <a class="volver" href="../">← Todas las calculadoras</a>
+    <h1>Calculadora de décimo tercer sueldo</h1>
+    <p>Ecuador 2026 · Gratis y sin registro</p>
+  </header>
+
+  <main class="contenedor">
+    <section class="tarjeta">
+      <h2>Calcula tu décimo tercero</h2>
+
+      <div class="campo">
+        <label for="sueldo">Sueldo mensual (USD)</label>
+        <input type="number" id="sueldo" placeholder="Ej: 600" min="0" step="0.01">
+      </div>
+
+      <div class="campo">
+        <label for="meses">Meses trabajados (1 dic – 30 nov)</label>
+        <input type="number" id="meses" value="12" min="1" max="12">
+      </div>
+
+      <button id="calcular">Calcular</button>
+
+      <p id="resultado" class="resultado"></p>
+    </section>
+
+    <p class="aviso">Cálculo referencial para sueldo fijo. Para casos específicos, consulta al Ministerio del Trabajo o a un contador.</p>
+
+    <article class="contenido">
+      <h2>¿Qué es el décimo tercer sueldo?</h2>
+      <p>Es un pago adicional que reciben todos los trabajadores en relación de dependencia en Ecuador. Equivale a la doceava parte de todo lo que ganaste entre el 1 de diciembre del año anterior y el 30 de noviembre del año en curso.</p>
+
+      <h2>¿Cómo se calcula?</h2>
+      <p>Si tu sueldo fue el mismo durante todo el período, la fórmula es:</p>
+      <p><strong>Décimo tercero = sueldo mensual × meses trabajados ÷ 12</strong></p>
+      <p>Ejemplo: con un sueldo de $800 y 5 meses trabajados, el cálculo es 800 × 5 ÷ 12 = <strong>$333.33</strong>.</p>
+      <p>Si tuviste horas extra, comisiones u otros ingresos variables, se suma todo lo recibido en el período y el total se divide para 12.</p>
+
+      <h2>¿Cuándo se paga?</h2>
+      <p>El plazo máximo es el 24 de diciembre. Si pediste recibirlo mensualizado, ya lo cobras cada mes junto a tu sueldo y no recibes un pago aparte en diciembre.</p>
+
+      <h2>¿Cuánto recibe quien gana el sueldo básico?</h2>
+      <p>El período de 2026 incluye diciembre de 2025, cuando el básico era $470, y los meses de enero a noviembre de 2026, con el básico de $482. Por eso, quien ganó el básico todo el período recibe <strong>$481</strong> y no $482: (470 + 482 × 11) ÷ 12 = 481.</p>
+    </article>
+  </main>
+
+  <script>
+    const boton = document.getElementById("calcular");
+
+    boton.addEventListener("click", function () {
+      const sueldo = Number(document.getElementById("sueldo").value);
+      const meses = Number(document.getElementById("meses").value);
+      const resultado = document.getElementById("resultado");
+
+      if (sueldo <= 0 || meses < 1 || meses > 12) {
+        resultado.className = "resultado error";
+        resultado.textContent = "Ingresa un sueldo mayor a 0 y entre 1 y 12 meses.";
+        return;
+      }
+
+      const decimoTercero = (sueldo * meses) / 12;
+      resultado.className = "resultado";
+      resultado.textContent = "Tu décimo tercer sueldo es: $" + decimoTercero.toFixed(2);
+    });
+  </script>
+</body>
+</html>
