@@ -236,3 +236,21 @@ select {
   font-size: 1.05rem;
   border-bottom: none;
 }
+/* ---------- Añadido en el Paso 21 ---------- */
+
+/* Botón verde para compartir por WhatsApp */
+.boton-whatsapp {
+  display: block;
+  margin-top: 16px;
+  padding: 12px;
+  text-align: center;
+  background: #1fa855;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.boton-whatsapp:hover {
+  background: #188c46;
+}

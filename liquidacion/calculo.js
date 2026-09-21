@@ -1,5 +1,5 @@
 // ===== CONSTANTES =====
-const SBU = 482;                     // Salario básico 2026
+const SBU = 482;                        // Salario básico 2026
 const MS_POR_DIA = 24 * 60 * 60 * 1000; // Milisegundos en un día
 
 // ===== FUNCIONES DE FECHAS =====
@@ -122,6 +122,11 @@ document.getElementById("calcular").addEventListener("click", function () {
     filas = filas + `<tr><td>${concepto.nombre}</td><td>$${concepto.valor.toFixed(2)}</td></tr>`;
   }
 
+  // 7. Preparar el mensaje para compartir por WhatsApp
+  const mensaje = "Calculé mi liquidación laboral en Ecuador: me corresponden aprox. $" + total.toFixed(2) +
+    ". Calcula la tuya gratis aquí: https://calculadoraslaborales.pages.dev/liquidacion/";
+  const enlaceWhatsApp = "https://wa.me/?text=" + encodeURIComponent(mensaje);
+
   resultado.className = "resultado";
   resultado.innerHTML = `
     <p>Tiempo de servicio: ${completos} años completos${hayFraccion ? " y una fracción" : ""}.</p>
@@ -129,5 +134,6 @@ document.getElementById("calcular").addEventListener("click", function () {
       ${filas}
       <tr class="total"><td>Total estimado</td><td>$${total.toFixed(2)}</td></tr>
     </table>
+    <a class="boton-whatsapp" href="${enlaceWhatsApp}" target="_blank" rel="noopener">Compartir por WhatsApp</a>
   `;
 });
