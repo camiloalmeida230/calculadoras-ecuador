@@ -3,27 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculadoras Laborales Ecuador</title>
+  <title>Calculadora de Décimo Tercer Sueldo Ecuador</title>
+  <meta name="description" content="Calcula gratis tu décimo tercer sueldo en Ecuador. Ingresa tu sueldo y los meses trabajados y obtén el valor al instante.">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Calculadoras Laborales Ecuador</h1>
-  <p>Calcula tu décimo tercero, décimo cuarto y liquidación en segundos.</p>
+  <header class="encabezado">
+    <h1>Calculadoras Laborales Ecuador</h1>
+    <p>Calcula tus beneficios laborales en segundos. Gratis y sin registro.</p>
+  </header>
 
-  <h2>Calculadora de décimo tercer sueldo</h2>
+  <main class="contenedor">
+    <section class="tarjeta">
+      <h2>Décimo tercer sueldo</h2>
 
-  <p>
-    <label for="sueldo">Sueldo mensual (USD):</label><br>
-    <input type="number" id="sueldo" placeholder="Ej: 600" min="0" step="0.01">
-  </p>
+      <div class="campo">
+        <label for="sueldo">Sueldo mensual (USD)</label>
+        <input type="number" id="sueldo" placeholder="Ej: 600" min="0" step="0.01">
+      </div>
 
-  <p>
-    <label for="meses">Meses trabajados (del 1 de diciembre al 30 de noviembre):</label><br>
-    <input type="number" id="meses" value="12" min="1" max="12">
-  </p>
+      <div class="campo">
+        <label for="meses">Meses trabajados (1 dic – 30 nov)</label>
+        <input type="number" id="meses" value="12" min="1" max="12">
+      </div>
 
-  <button id="calcular">Calcular</button>
+      <button id="calcular">Calcular</button>
 
-  <p id="resultado"></p>
+      <p id="resultado" class="resultado"></p>
+    </section>
+
+    <p class="aviso">Cálculo referencial para sueldo fijo. Para casos específicos, consulta al Ministerio del Trabajo o a un contador.</p>
+  </main>
 
   <script>
     const boton = document.getElementById("calcular");
@@ -34,11 +44,13 @@
       const resultado = document.getElementById("resultado");
 
       if (sueldo <= 0 || meses < 1 || meses > 12) {
+        resultado.className = "resultado error";
         resultado.textContent = "Ingresa un sueldo mayor a 0 y entre 1 y 12 meses.";
         return;
       }
 
       const decimoTercero = (sueldo * meses) / 12;
+      resultado.className = "resultado";
       resultado.textContent = "Tu décimo tercer sueldo es: $" + decimoTercero.toFixed(2);
     });
   </script>

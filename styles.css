@@ -1,0 +1,120 @@
+/* Hace que los tamaños incluyan bordes y rellenos (evita sorpresas) */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: #f4f6f8;
+  color: #1f2937;
+  line-height: 1.5;
+}
+
+/* Franja superior azul */
+.encabezado {
+  background: #0f4c81;
+  color: white;
+  padding: 32px 16px;
+  text-align: center;
+}
+
+.encabezado h1 {
+  margin: 0 0 8px;
+  font-size: 1.6rem;
+}
+
+.encabezado p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* Centra el contenido y limita el ancho */
+.contenedor {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+/* Recuadro blanco de la calculadora */
+.tarjeta {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.tarjeta h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.campo {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+}
+
+/* Cuando el usuario hace clic en una caja, se resalta */
+input:focus {
+  outline: none;
+  border-color: #0f4c81;
+  box-shadow: 0 0 0 3px rgba(15, 76, 129, 0.15);
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: white;
+  background: #0f4c81;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0c3d68;
+}
+
+/* Caja del resultado (verde) */
+.resultado {
+  margin-top: 20px;
+  padding: 16px;
+  background: #e8f4ea;
+  border-left: 4px solid #2e7d32;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Si el resultado está vacío, no se muestra */
+.resultado:empty {
+  display: none;
+}
+
+/* Variante roja para errores */
+.resultado.error {
+  background: #fdecea;
+  border-left-color: #c62828;
+}
+
+.aviso {
+  font-size: 0.85rem;
+  color: #6b7280;
+  text-align: center;
+  margin-top: 24px;
+}
